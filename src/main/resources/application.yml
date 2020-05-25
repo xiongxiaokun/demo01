@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  profiles:
+    #激活开发环境
+    active: dev
+
+---
+#开发环境配置
+spring:
+  profiles: dev
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.23.102:3306/springboot_test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+---
+#生产环境配置
+spring:
+  profiles: pro
+server:
+  port: 8082
